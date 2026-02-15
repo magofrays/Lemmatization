@@ -15,10 +15,16 @@ public class CommandLineRunner {
     public void run(){
         System.out.println("Если ввод пустой, программа завершит свою работу.");
         while(true){
-            System.out.println("Введите текст (Ctrl + D чтобы закончить ввод):");
             List<String> words = userInputParser.parse(System.in);
-            if(words.isEmpty()){
-                return;
+
+            if (words.isEmpty()) {
+                System.out.println("Ввод завершен. Хотите продолжить? (да/нет)");
+                Scanner scanner = new Scanner(System.in);
+                String answer = scanner.nextLine();
+                if (answer.equalsIgnoreCase("нет") || answer.equalsIgnoreCase("н")) {
+                    break;
+                }
+                continue;
             }
             var result = lemmatizationWorker.lemmatize(words);
             int count = 0;
