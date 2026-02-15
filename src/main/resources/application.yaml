@@ -1,5 +1,0 @@
-app:
-  dict:
-    filename: dict.opcorpora.xml
-    use-forms: true # словоформы, чтобы ускорить поиск
-    lemmas-size: -1 # используем все

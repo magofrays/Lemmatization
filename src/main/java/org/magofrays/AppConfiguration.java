@@ -1,16 +1,12 @@
 package org.magofrays;
-
-import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
-import javax.xml.parsers.DocumentBuilderFactory;
+
 
 @Configuration
+@ComponentScan("org.magofrays")
 public class AppConfiguration {
 
-    @Bean
-    DocumentBuilderFactory documentBuilderFactory(){
-        return DocumentBuilderFactory.newInstance();
-    }
 
 }
